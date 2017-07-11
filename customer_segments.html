@@ -12064,9 +12064,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>The first customer comparing to other two looks like as small retailer due to metric's values (std, mean, features mainly in 50-75%).</li>
-<li>The second one looks like as cafe, restaurant or small market (std, mean, features mainly in 25-50%).</li>
-<li>The third one comparing to other two and statistical description looks like as a large retailer (std, mean, features mainly in &gt; 75%).</li>
+<li>The first customer, in comparison with the other two, appears to be as small retailer due to the metric's values (std, mean, features mainly within the range of 50-75%).</li>
+<li>The second one appears to be a cafe, a restaurant, or a small market (std, mean, features mainly within the range of 25-50%).</li>
+<li>The third one, in comparison with the other two and the statistical description, appears to be a large retailer (std, mean, features mainly over 75%).</li>
 </ul>
 
 </div>
@@ -12211,8 +12211,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>All features were tried for the determination. The highest R^2 score reported by "Detergents Paper" and the second one by "Grocery" feature (with random state equal to 3333). This means that information about feature Grocery already contains remaining features but not full - only ~half. Also this is true for the Detergents_Paper but with more bigger information containing in remaining features.
-On the other hand, for such features as: Fresh, Milk, Frozen and Delicatessen remaining features do not already contain the information about selected feature and those features telling some new information about samples. We will use those features for identifying customers' spending habits.</p>
+<p>All the features were tried for the determination. The highest R^2 score was reported by "Detergents Paper" and the second highest by the "Grocery" feature (with the random state of 3333). It means that information about the feature Grocery already contains the remaining features, but not the full amount - only approximately half. Also, this is true for the Detergents_Paper, while it has more information contained in the remaining features. On the other hand, for such features as: Fresh, Milk, Frozen, and Delicatessen the remaining features do not contain any information about both the selected feature and those features that hold some new information about the samples. We will use these features in order to identify customers' spending habits.</p>
 
 </div>
 </div>
@@ -17299,8 +17298,7 @@ ix6LxWKxWCwWi8UyrrGLHovFYrFYLBaLxTKu+f9VdCcOw/l6LQAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>In the scatter above there are features pairs which represent some degree of correlation: Grocery and Milk; Detergents Paper and Milk, Grocery and Detergents Paper and if we analyze correlation plot (provided by seaborn module, but plot removed due bug of a colormap) then we can see also correlation for features: Delicatessen and Frozen, Delicatessen and Milk, Delicatessen and Fresh, Frozen and Fresh. Looking on the plot (first) this partially confirms relevance of the features attempted to predict because information about selected features Grocery and Detergents Paper already contains remaining features.
-Data for all features in the pairs is skewed right. After applying CoxBox the results show that normal-log distribution will be true for the Milk, Frozen and Detergents_Paper (looks like bi-normal) feature due to CoxBox value near zero. The second plot confirms suspicions about the relevance of the feature attempted to predict may be except delicatessen.</p>
+<p>In the scatter above, there are pairs of features which represent some degree of correlation: Grocery and Milk; Detergents Paper and Milk, Grocery and Detergents Paper; and if we analyze the correlation plot (provided by the seaborn module, but the plot was removed due to a bug of the colormap), we will see correlation for the following features, as well: Delicatessen and Frozen, Delicatessen and Milk, Delicatessen and Fresh, Frozen and Fresh. If we look at the plot (first),the relevance of the features we attempted to predict are partially confirmed, because the information on  the selected features Grocery and Detergents Paper already contains the remaining features. The data on the entire group of feature pairs inclines to the right. When we apply CoxBox, the results show that normal-log distribution will be true in the cases of the features Milk, Frozen and Detergents_Paper (looks like bi-normal) due to the CoxBox value being near zero. The second plot confirms my suspicions about the feature Delicatessen relevance.</p>
 
 </div>
 </div>
@@ -31334,8 +31332,7 @@ LYVXchzHcRzHcRzHaSn+F3l6zEI3MaC5AAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Outlier analysis demonstrates that there considered outlier points for more than one feature:
-154, 128, 65, 66, 75</p>
+<p>The outlier analysis demonstrates that outlier points for more than one feature are considered: 154, 128, 65, 66, 75:</p>
 <ul>
 <li>65 (Fresh, Frozen), </li>
 <li>66 (Fresh, Delicatessen), </li>
@@ -31343,7 +31340,7 @@ LYVXchzHcRzHcRzHaSn+F3l6zEI3MaC5AAAAAElFTkSuQmCC
 <li>128 (Fresh, Delicatessen), </li>
 <li>154 (Milk, Grocery, Delicatessen), </li>
 </ul>
-<p>Those data points should be removed due to belonging for more than one feature. Due to Fresh feature distribution skewed left than all outliers for Fresh also were droped.</p>
+<p>Those data points should be removed, since they belong with more than one feature. Because the Fresh feature distribution is skewed to the left, unlike the other outliers, we drop these data points for Fresh, too.</p>
 
 </div>
 </div>
@@ -31790,11 +31787,11 @@ IiJB7/8Bxa78Jj8MGOsAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The total explained variance by the first and second principal component is 0.4713 + 0.2435 = 0.72. The total variance for the first four components is: 0.926.</p>
-<p>1) The first principal component has the highest explained variance - 0.47. This component describe that positive increase of dimension 1 will raise positive-weights of Milk, Grocery, Detergents_Paper and Delicatessen and negative for Frozen and Fresh. So, we can see negative dependence of Fresh and Milk from positive weights of Milk, Grocery, Detergents_Papers and probably of Delicatessen. For customer spending this means correlation of the dimension 1 positive increase Fresh and Frozen negatively depends on other features increase. Detergents Paper, Grocery and Milk are dominant features. For example, customers that buy a lot of Milk also buy a lot of Grocery and Detergents Paper.</p>
-<p>2) The second principal component is the next one with larger explained variance and increase in Dimension 2 will raise negative-weight for the features: Fresh, Milk, Grocery, Frozen and Delicatessen. Comparing to the first PC we can see correlation (analyzing weights) between decreasing Fresh, Frozen and Delicatessen. For customer' spending this means that Dimension 2 positive increase raise significant decrease of Fresh, Frozen and Delicatessen. The dominat features are Fresh, Frozen, and Delicatessen. For example, customers that buy a small amount of Fresh also buy a small amount of Frozen and Delicatessen.</p>
-<p>3) The third principal component represent negative-weights of Fresh, Detergents_Paper, Frozen and Grocery and raise positive-weighted Delicatessen and Milk. The dominant feature is Frozen and Delicatessen. If customer buy a lot of Delicatessen then also buy more less of Frozen and vice versus.</p>
-<p>4) The fourth principal component represent that negative-weighted Milk, Frozen and Delicatessen and raise positive-weighted Fresh, Grocery and Detergents Papers. The dominant feature is Fresh and Frozen. If customer buy a lot of Fresh then aslo buy more less of Frozen and vice versus.</p>
+<p>The total of the explained variance for  the first and second principal component is 0.4713 + 0.2435 = 0.72. The total variance for the first four components is: 0.926.
+1) The first principal component has the highest explained variance - 0.47. This component describes the fact that a positive increase of the dimension 1 will raise positive-weights of Milk, Grocery, Detergents_Paper and Delicatessen and negative for Frozen and Fresh. Thus, we can see negative dependence of Fresh and Milk from the positive weights of Milk, Grocery, Detergents_Papers, and, probably, of Delicatessen, too. For the spending customerthis means a correlation of the dimension 1 with its positive increase Fresh and Frozen, whichnegatively depends on the increase of other features. Detergents Paper, Grocery, and Milk are the dominant features. For example, customers that buy a lot of Milk also buy a lot of Grocery, and Detergents Paper.</p>
+<p>2) The second principal component, with the second largest explained variance and increase in Dimension 2, will raise negative-weight for the following features: Fresh, Milk, Grocery, Frozen, and Delicatessen. In comparson to the first PC, we can see a correlation (analyzing weights) between the decreasing Fresh, Frozen, and Delicatessen. For the spending customer, this means that the rising positive increase of Dimension 2 causes a significant decrease of Fresh, Frozen, and Delicatessen. The dominant features are Fresh, Frozen, and Delicatessen. For example, customers that buy a small amounts of Fresh also buy small amounts of Frozen and Delicatessen.</p>
+<p>3) The third principal component represent negative-weights of Fresh, Detergents_Paper, Frozen, and Grocery and increase the positive-weighted Delicatessen and Milk. The dominant features are Frozen and Delicatessen. The more the customer buys Delicatessen,  the more they will buy Frozen, and vice versa.</p>
+<p>4) The fourth principal component represent that negative-weighted Milk, Frozen, and Delicatessen and gives increase to the positive-weighted Fresh, Grocery, and Detergents Papers. The dominant features are Fresh and Frozen. The more the customer buysFresh  they will of Frozen, and vice versa.</p>
 
 </div>
 </div>
@@ -32536,27 +32533,25 @@ IiJB7/8Bxa78Jj8MGOsAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<h4 id="Advantages-of-K-Means-clustering-algorithm">Advantages of K-Means clustering algorithm<a class="anchor-link" href="#Advantages-of-K-Means-clustering-algorithm">&#182;</a></h4><ul>
-<li>K-Means scales well to large number of samples.</li>
-<li>K-Means is a special case of Mixture of Gaussian, if we know that cluster shapes are convex and isotropic then K-Means is correct choose.</li>
+<h4 id="Advantages-of-the-K-Means-clustering-algorithm">Advantages of the K-Means clustering algorithm<a class="anchor-link" href="#Advantages-of-the-K-Means-clustering-algorithm">&#182;</a></h4><ul>
+<li>K-Means scales well to a large number of samples.</li>
+<li>K-Means is a special case of Mixture of Gaussian; and it is the correct choice in the case of cluster being convex and isotropic.</li>
 </ul>
 <h4 id="Advantages-of-GMM-algorithm">Advantages of GMM algorithm<a class="anchor-link" href="#Advantages-of-GMM-algorithm">&#182;</a></h4><ul>
-<li>EM is the fastest algorithm for learning mixture models if data not too large. </li>
-<li>GMM has more flexibility to model the clusters' shapes: spherical, tied, diag and full.</li>
-<li>GMM is a probabilistic model that assumes all the data points are generated from a mixture of a finite number of Gaussian distributions with unknown parameters.</li>
+<li>EM is the fastest algorithm for learning mixture models in cases of small dataset . </li>
+<li>GMM is more flexible with the following model clusters' shapes: spherical, tied, diag, and full.</li>
+<li>GMM is a probabilistic model that assumes that all the data points are generated from a mixture of a finite number of Gaussian distributions with unknown parameters.</li>
 </ul>
 <h4 id="Choose-of-Clustering-algorithm">Choose of Clustering algorithm<a class="anchor-link" href="#Choose-of-Clustering-algorithm">&#182;</a></h4><ul>
-<li>GMM is very fast algorithms and will be used for different cluster structures but K-Means only for spherical clusters' shapes. If we compare K-Means and GMM then K-Means converge quick to a local optimum than GMM due to K-Means is more simple.</li>
-<li><p>K-Means is a simple algorithm and may be scaled for large data sets. The complexity of K-Means is O(k^n), where n - samples size, k - number of clusters. Unfortuanally GMM not scalable but more accurate than K-Means. Than GMM performing on large data sets that becomes time uneffective.</p>
-</li>
-<li><p>K-Means inertia makes the assumption that clusters are convex and isotropic, which is not always the case. It responds poorly to elongated clusters, or manifolds with irregular shapes. But GMM is a probabilistic model that assumes all the data points are generated from a mixture of a finite number of Gaussian distributions with unknown parameters.</p>
-</li>
-<li>Mixture models would determine subpopulations, without associating each sample with a cluster. These subpopulations are defined by distributions with unknown parameters, for learning these parameters Expectation-Maximisation is to be used.</li>
-<li>K-means is a special case of Mixture of Gaussian.</li>
-<li>K-means define hard clusters, where an each sample associated with only one particular cluster.</li>
-<li>GMM define soft clusters and each sample assesed with probabilities to belonging for an each cluster.</li>
+<li>GMM is a set of fast algorithms and can be used for different cluster structures, yet can be used K-Means only for spherical clusters' shapes. If we compare K-Means to GMM,K-Means converge quicker to a local optimum than GMM, whereas GMM is more simpler. </li>
+<li>K-Means is a simple algorithm and may be scaled for large data sets. The complexity of K-Means is O(k^n), where n - samples size and k - number of clusters. Unfortunately, GMM is not scalable, yet it is more accurate than K-Means. Then again, GMM performs on large data sets and becomes decreases temporal efficiency.</li>
+<li>K-Means inertia causes the assumption that clusters are convex and isotropic, which is not always true. It responds poorly to elongated clusters, or manifolds with irregular shapes. However, GMM is a probabilistic model that assumes that all the data points are generated from a mixture of a finite number of Gaussian distributions with unknown parameters.</li>
+<li>Mixture models would determine subpopulations, without associating each sample with a cluster. These subpopulations are defined by distributions with unknown parameters; and Expectation-Maximization is to be used for learning these parameters.</li>
+<li>K-Means is a special case of Mixture of Gaussian. </li>
+<li>K- Means defines hard clusters, where each sample can be associated only with one particular cluster.</li>
+<li>GMM defines soft clusters, and each sample must be assessed through the probability of belonging to its respective cluster.
+Finally, GMM is better for this project due to its accuracy, since data set is relatively small.</li>
 </ul>
-<p>Finally GMM is better for this project due to it accuracy and data set is relatively small.</p>
 
 </div>
 </div>
@@ -49630,7 +49625,7 @@ AACEBgEIAAAAQGgQgAAAAACEBgEIAAAAQGgQgAAAAACEBgEIAAAAQGgQgAAAAACExv8Gi4jAS79l
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-There were tried 2-6 clusters with different cluster shape.</p>
+2-6 clusters with different cluster shape were tried.</p>
 <ul>
 <li>silhouette_score = 0.433, BIC = 3395.648, n_components = 2, cv_type = spherical</li>
 <li>silhouette_score = 0.341, BIC = 3412.780, n_components = 3, cv_type = spherical</li>
@@ -49654,11 +49649,11 @@ There were tried 2-6 clusters with different cluster shape.</p>
 <li>silhouette_score = 0.300, BIC = 3444.841, n_components = 6, cv_type = tied</li>
 </ul>
 <p>The best silhouette score was obtained for the two clusters - 0.433 and cluster shape is spherical.</p>
-<p>Best params set by BIC:
+<p>The best params set for the BIC:
 GMM(covariance_type='tied', init_params='wmc', min_covar=0.001,
   n_components=2, n_init=1, n_iter=100, params='wmc', random_state=3333,
   thresh=None, tol=0.001, verbose=0)</p>
-<p>Best params set by Silhouette Score:
+<p>The best params set by for the Silhouette Score:
 GMM(covariance_type='spherical', init_params='wmc', min_covar=0.001,
   n_components=2, n_init=1, n_iter=100, params='wmc', random_state=3333,
   thresh=None, tol=0.001, verbose=0)</p>
@@ -50909,8 +50904,8 @@ JEnKeyavkiRJkqS8Z/IqSZIkScp7/z8LO4frHRsiCgAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>Segment 0 represents small markets, cafe and restaurants due to high amount of the Fresh feature, 4x times smaller amount of the Milk as in the Segment 1, 4x times smaller Grocery as in the Segment 1, little bit bigger Frozen amount, N times smaller Detergents Paper amount as in the Segment 1 and very similar amount of Delicatessen.   </li>
-<li>Segment 1 represents large markets and retailers due to large amount of Grocery, Milk and Detergents Paper comparing to 50% and means of the Segment 0.</li>
+<li>Segment 0 represents the small markets, cafés, and restaurants due to the large amount of the Fresh feature there, which is 4 times smaller than Milk in Segment 1, 4 times smaller than Grocery in Segment 1, little bit larger than Frozen and N times smaller than Detergents Paper in Segment 1, and very close to the amount of Delicatessen there.  </li>
+<li>Segment 1 represents large markets and retailers due to the large amount of Grocery, Milk, and Detergents Paper there, in comparison to the 50% of these means in Segment 0.</li>
 </ul>
 
 </div>
@@ -51239,13 +51234,13 @@ SUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-Each data point will be presented as one of the segments:</p>
+<p><strong>Answer:</strong></p>
+<p>Each data point will be presented as one of the segments:</p>
 <ul>
-<li>The first and third sample belongs to Segment 1 - large markets and retailers. As we can see in the plot above the first and the third point features' amount very similar to Segment 1 (especially for Grocery, Milk and Detergents Paper);</li>
-<li>The second sample belongs to Segment 0 - small markets, small cafe and restaurants. As we can see in the plot above the second point features' amount very similar to Segment 0, where Fresh dominates of other features.</li>
+<li>The first and third sample belong to Segment 1 the large markets and retailers. As we can see in the plot above, the amount of features for the first and the third point are very similar to Segment 1 (especially with Grocery, Milk, and Detergents Paper);</li>
+<li>The second sample belongs to Segment 0 - small markets, small cafés, and restaurants. As we can see in the plot above, the amount of features for the second point are very similar to Segment 0, where Fresh dominates other features.</li>
 </ul>
-<p>This prediction is consistent and fitting with the answer of the first question.</p>
+<p>This prediction is consistent and corresponds to the answer of the first question.</p>
 
 </div>
 </div>
@@ -51276,11 +51271,12 @@ Each data point will be presented as one of the segments:</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Clustering results divided our data set into two segments: large markets and retailers and second one small markets, cafe, hotels and restaurants. We also know means of segments' features and would use them to make A/B test.</p>
-<p>First we need to identify which features may be affected by delivery change from 5 days to 3 days and those are: Fresh, Milk and Delicatessen. Those products in such categories loses their value by time. Also doing A/B test we will reduce possible negative impact and we need to measure of A/B test results. Hence, we choose smaller segment: cafe, hotels and restaurants and try to make A/B test on Milk category due is cheaper than Delicatessen (for reducing negative impact during A/B test). If customers will drop their orders than we can measure negative impact (reducing orders count in time period) on change over-wise positive (increasing orders count in time period).</p>
-<p>Other case of loosing customers or amount of orders is customers from segment - large markets and retailers. There they are planing to sell different product categories in defined time period, optimizing product value lost and storehouse facilities. We can take sub cluster on Frozen due storage facilities constrain and measure how much orders will dropped or over-wise.</p>
-<p>To identify who is affected the most we need to measure impact on prev. mentioned A/B tests on sub-clusters (customers subsets) in identified segments and measure size of such sub-clusters, then we will really measure impact of change.</p>
-<p>At the end it seams that change will differently affect customers from the both segments.</p>
+<p>The clustering results divided our data set into two segments: the large markets and retailers and the small markets, cafe, hotels, and restaurants. We also know the means of segment features and would use them to carry out the A/B test. 
+First, we need to identify which features may be affected by the delivery time change, from 5 days to 3 days, These are: Fresh, Milk, and Delicatessen. Products in these categories lose their value with time. Also, when performing the A/B test, we will reduce any possible negative impacts, and we will need to measure A/B test results. Hence, we choose a smaller segment: cafe, hotels, and restaurants and try to perform the A/B test on the Milk category, since itis cheaper than Delicatessen (to reduce any negative impacts during the A/B test). 
+Other case of loosing customers or amount of orders is customers from segment - large markets and retailers. There they are planing to sell different product categories in defined time period, optimizing product value lost and storehouse facilities. We can take sub cluster on Frozen due storage facilities constrain and measure how much orders will dropped or over-wise.</p>
+<p>Another case of losing customers or orders is having customer issues in thesegment  large markets and retailers. There, they are tend to sell different product categories in a defined time period, managing the product value loss and optimizing storehouse facilities. We can take a sub-cluster of Frozen, due limitations in storage facilities, and measure by how much the number of orders will dropp or increase.
+To identify, who gets affectedmost, we need to measure the impact on the previously mentioned A/B tests performed on sub-clusters (customer subsets) in identified segments and measure the size of such sub-clusters. Only then, we can really determine the true impact of change.</p>
+<p>To conclude, it seems that change will affect customers differently in the two segments.</p>
 
 </div>
 </div>
@@ -51302,7 +51298,7 @@ Each data point will be presented as one of the segments:</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-This feature will be customer establishment set or type obtained from clustering.</p>
+This feature will be the customer establishment set or type obtained from clustering.</p>
 
 </div>
 </div>
@@ -52122,9 +52118,7 @@ bDQlYg4slzgAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Clustering algorithm fitting very well to this underlying distribution of Hotel/Restaurant/Cafe customers to Retailer customers.
-Looking on the cluster's graphs I think there is possible that some data poits not purely "Retailers" or "Hotels/Restaurants/Cafes" due to outliers exists and cluster centers are relatively close to each other and middle data points will be some mix of different establishments.
-Yes, I consider these classifications are consistent with my definition of the customer segments.</p>
+<p>The clustering algorithm fits very well to the underlying distribution of Hotel/Restaurant/Cafe customers, and to Retailer customers. In case of the cluster graphs, I think, it is possible that some data points are not purely "Retailers" or "Hotels/Restaurants/Cafes", because  outliers exist there, the cluster centers are relatively close to each other, and the central data points will turn out to be a mix of different establishments. I consider these classifications consistent with my definition of the customer segments.</p>
 
 </div>
 </div>
